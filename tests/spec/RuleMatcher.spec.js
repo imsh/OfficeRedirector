@@ -63,10 +63,9 @@ describe("RuleMatcher", function() {
     };
   }
 
-  function givenRule(from, to, isActive){
+  function givenRule(site, isActive){
     return {
-      from: from,
-      to: to,
+      site: site,
       isActive: isActive
     };
   }

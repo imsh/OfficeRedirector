@@ -5,13 +5,11 @@ angular.module('switcheroo')
 
 	$scope.add = function() {
 		$scope.rules.push({
-			from: $scope.from,
-			to: $scope.to,
+			site: $scope.site,
 			isActive: true
 		});
 
-		$scope.from = '';
-		$scope.to = '';
+		$scope.site = '';
 	};
 
 	$scope.remove = function(index) {

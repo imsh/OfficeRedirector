@@ -1,2 +1,2 @@
-angular.module('switcheroo', []).
+angular.module('sharepointdocopener', []).
 	factory('RulesService', RulesServiceFactory.getRulesService);
