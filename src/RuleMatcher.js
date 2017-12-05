@@ -13,15 +13,15 @@ var RuleMatcher = function(rules){
         if(rule){
             lastRequestId = request.requestId;
             var result = request.url;
-            if (request.url.match(".*\.(ppt|pptx)$"))
+            if (request.url.match(".*\\.(ppt|pptx)$"))
             {
-                result = "ms-powerpoint:ofe|u|" + result;
+                result = "ms-powerpoint:ofv|u|" + result;
             }
-            else if (request.url.match(".*\.(doc|docx)$"))
+            else if (request.url.match(".*\\.(doc|docx)$"))
             {
                 result = "ms-word:ofv|u|" + result;
             }
-            else if (request.url.match(".*\.(xls|xlsx)$"))
+            else if (request.url.match(".*\\.(xls|xlsx)$"))
             {
                 result = "ms-excel:ofv|u|" + result;
             }
