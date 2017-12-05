@@ -1,4 +1,4 @@
-angular.module('switcheroo')
+angular.module('sharepointdocopener')
 .controller('RulesController', ['$scope', 'RulesService', function($scope, rulesService) {
 	$scope.rules = chrome.extension.getBackgroundPage().rules;
 	$scope.isEditing = false;

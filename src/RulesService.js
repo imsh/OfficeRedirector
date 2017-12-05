@@ -28,7 +28,7 @@ var SyncedRulesService = function(){
 }
 
 var RulesServiceFactory = {
-	getRulesService: function(){
-		return new LocalRulesService();
-	}
+getRulesService: function(){
+	return new LocalRulesService();
+}
 };
