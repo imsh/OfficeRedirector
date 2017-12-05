@@ -4,10 +4,13 @@
 	"manifest_version": 2,
 	"description": "Setup custom redirect rules for any http request i.e pages, scripts, images etc. Uses a simple string replace to do this.",
 	"browser_action": {
-		"default_icon": "switch-browser.png",
+		"default_icon": "Office_redirector_16.png",
 		"default_title": "Add switcheroo rules.",
 		"default_popup": "switcheroo.html"
 	},
+	"icons": { "16": "Office_redirector_16.png",
+           "48": "Office_redirector_48.png",
+          "128": "Office_redirector_128.png" },
 	"permissions": ["webRequest", "webRequestBlocking", "<all_urls>", "tabs", "storage"],
 	"background": {
 		"scripts": ["lib/underscore.js", "RulesService.js", "RuleMatcher.js", "background.js"]
