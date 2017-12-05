@@ -1,7 +1,7 @@
 <!doctype html>
-<html ng-app="sharepointdocopener" ng-csp>
+<html ng-app="officeredirector" ng-csp>
 	<head>
-		<title>Switcheroo Redirector</title>
+		<title>Office Redirector</title>
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<script type="text/javascript" src="lib/angular.js"></script>
 		<script type="text/javascript" src="lib/underscore.js"></script>
@@ -15,7 +15,7 @@
 				<span class="site">Site</span><span class="seperator">&nbsp;</span>
 			</div>
 			<p ng-if="!rules.length" id="no-rules">
-				You have no redirect rules at the moment so why don't you go ahead and <em class="switcheroo">Switcheroo</em>.
+				You have not defined any sites at the moment.
 			</p>
 			<ul id="rules" ng-repeat="rule in rules">
 				<li>

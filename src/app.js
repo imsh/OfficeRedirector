@@ -1,2 +1,2 @@
-angular.module('sharepointdocopener', []).
+angular.module('officeredirector', []).
 	factory('RulesService', RulesServiceFactory.getRulesService);

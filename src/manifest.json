@@ -1,12 +1,12 @@
 {
-	"name": "SharePoint doc opener",
+	"name": "Office redirector",
 	"version": "0.1",
 	"manifest_version": 2,
-	"description": "Setup custom redirect rules for any http request i.e pages, scripts, images etc. Uses a simple string replace to do this.",
+	"description": "Changes links to office files to URI format which allow these files to be opened directly from the web/sharepoint instead of being downloaded. Uses a simple string replace to do this.",
 	"browser_action": {
 		"default_icon": "Office_redirector_16.png",
-		"default_title": "Add switcheroo rules.",
-		"default_popup": "switcheroo.html"
+		"default_title": "Add sites.",
+		"default_popup": "officeredirector.html"
 	},
 	"icons": { "16": "Office_redirector_16.png",
            "48": "Office_redirector_48.png",

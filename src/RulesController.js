@@ -1,4 +1,4 @@
-angular.module('sharepointdocopener')
+angular.module('officeredirector')
 .controller('RulesController', ['$scope', 'RulesService', function($scope, rulesService) {
 	$scope.rules = chrome.extension.getBackgroundPage().rules;
 	$scope.isEditing = false;
