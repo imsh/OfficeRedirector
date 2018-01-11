@@ -13,7 +13,7 @@ var RuleMatcher = function(rules){
         if(rule){
             lastRequestId = request.requestId;
             var result = request.url;
-            if (request.url.match(".*\\.(ppt|pptx)$"))
+            if (request.url.match(".*\\.(ppt|pptx|pptm)$"))
             {
                 result = "ms-powerpoint:ofv|u|" + result;
             }
