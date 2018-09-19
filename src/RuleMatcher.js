@@ -25,6 +25,10 @@ var RuleMatcher = function(rules){
             {
                 result = "ms-excel:ofv|u|" + result;
             }
+            else if (request.url.match(".*\\.(vsd|vsdx|vsdm)$"))
+            {
+                result = "ms-visio:ofv|u|" + result;
+            }
             return {
                  redirectUrl : result
             };
