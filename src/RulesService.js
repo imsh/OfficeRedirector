@@ -1,12 +1,12 @@
 var LocalRulesService = function (){
 		this.get = function(){
-			var stroredRules = localStorage['rules'];
+			var storedRules = localStorage['rules'];
 
-			if(!stroredRules){
+			if(!storedRules){
 				return [];
 			}
 
-			return JSON.parse(stroredRules);
+			return JSON.parse(storedRules);
 		};
 		this.set = function(rules){
 			localStorage['rules'] = JSON.stringify(rules);

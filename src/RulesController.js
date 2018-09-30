@@ -37,7 +37,7 @@ angular.module('officeredirector')
 		return text;
 	};
 
-	$scope.$watch('rules', function(oldValue, newValue){
+	$scope.$watch('rules', function(newValue, oldValue){
 		rulesService.set(newValue);
 	}, true);
 }]);
