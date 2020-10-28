@@ -3,39 +3,47 @@
 	<head>
 		<title>Office Redirector</title>
 		<link rel="stylesheet" type="text/css" href="styles.css">
-		<script type="text/javascript" src="lib/angular.js"></script>
-		<script type="text/javascript" src="lib/underscore.js"></script>
-		<script type="text/javascript" src="RulesService.js"></script>
-		<script type="text/javascript" src="app.js"></script>
-		<script type="text/javascript" src="RulesController.js"></script>
+		<!--<script type="text/javascript" src="lib/underscore.js"></script>-->
+		<!--<script type="text/javascript" src="RulesService.js"></script>
+		<script type="text/javascript" src="RulesController.js"></script>-->
 	</head>
 	<body>
-		<div id="container" ng-controller="RulesController">
+		<div class="container">
 			<div id="headings">
 				<span class="site">Site</span><span class="seperator">&nbsp;</span>
 			</div>
-			<p ng-if="!rules.length" id="no-rules">
+			<p id="no-rules">
 				You have not defined any sites at the moment.
 			</p>
-			<ul id="rules" ng-repeat="rule in rules">
-				<li>
-					<span class="site" ng-if="!isEditing" title="{{rule.site}}">{{shortenText(rule.site)}}</span>
+			<ul id="sites-holder">
+					<li>
+						<input type="checkbox">
+						<label>Pay Bills</label>
+						<input type="text">
+						<button class="edit">Edit</button>
+						<button class="delete">Delete</button>
+					</li>
+
+					<li class="editMode">
+						<input type="checkbox">
+						<label>Go Shopping</label>
+						<input type="text" value="Go Shopping">
+						<button class="edit">Edit</button>
+						<button class="delete">Delete</button>
+					</li>
+
+					<!--<span class="site" ng-if="!isEditing" title="{{rule.site}}">{{shortenText(rule.site)}}</span>
 					<input type="text" ng-if="isEditing" ng-model="rule.site" />
-					<input type="checkbox" class="active" name="active" ng-model="rule.isActive" />
+					<input type="checkbox" class="active" name="active" />
+					<button class="edit">Edit</button><button class="delete">Delete</button>
 					<a href="#" class="editRuleButton" ng-click="enableEditing()" ng-if="!isEditing">Edit</a>
 					<a href="#" class="updateRuleButton" ng-click="disableEditing()" ng-if="isEditing">Update</a>
-					<a href="#" class="removeRuleButton" ng-click="remove($index)">Remove</a>
-				</li>
+					<a href="#" class="removeRuleButton" ng-click="remove($index)">Remove</a>-->
 			</ul>
-			<form ng-submit="add()">
-				<div id="new-rule">
-					<input type="text" id="site" ng-model="site" />
-					<input id="addRuleButton" type="submit" value="Add" name="AddRule" />
-				</div>
-				<div>
-					<input id="removeAllRulesButton" type="button" value="Remove All" name="RemoveAll" ng-click="clear()" />
-				</div>
-			</form>
+			<input id="new-rule" type="text"><button id="add-button">Add site</button>
 		</div>
+
+		<script type="text/javascript" src="app.js"></script>
+
 	</body>
 </html>
