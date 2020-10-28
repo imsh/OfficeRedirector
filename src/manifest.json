@@ -11,7 +11,7 @@
 	"icons": { "16": "Office_redirector_16.png",
            "48": "Office_redirector_48.png",
           "128": "Office_redirector_128.png" },
-	"permissions": ["webRequest", "webRequestBlocking", "<all_urls>", "tabs", "storage"],
+	"permissions": ["webRequest", "webRequestBlocking", "<all_urls>", "storage"],
 	"background": {
 		"scripts": ["lib/underscore.js", "RulesService.js", "RuleMatcher.js", "background.js"]
 	}
