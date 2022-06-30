@@ -4,7 +4,7 @@ var RuleMatcher = function(rules){
     this.rules = rules;
 
     this.redirectOnMatch = function(request){
-        var rule = _.find(rules, function(rule){ 
+        var rule = rules.find((rule) => { 
             return rule.isActive 
             && request.url.indexOf(rule.site) > -1 
             && request.requestId !== lastRequestId; 

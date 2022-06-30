@@ -1,6 +1,6 @@
 {
 	"name": "Office redirector",
-	"version": "0.7",
+	"version": "0.8",
 	"manifest_version": 2,
 	"description": "Changes links to office files to URI format which allows these files to be opened directly from the web or SharePoint.",
 	"browser_action": {
@@ -13,6 +13,6 @@
           "128": "Office_redirector_128.png" },
 	"permissions": ["webRequest", "webRequestBlocking", "<all_urls>", "storage"],
 	"background": {
-		"scripts": ["lib/underscore.js", "RulesService.js", "RuleMatcher.js", "background.js"]
+		"scripts": ["RulesService.js", "RuleMatcher.js", "background.js"]
 	}
 }
