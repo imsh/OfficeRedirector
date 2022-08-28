@@ -1,40 +1,37 @@
 var LocalRulesService = function (){
-		this.get = function(){
-			var storedRules = localStorage['rules'];
+		this.get = async function(){
+			var storedRules = await readLocalStorage('rules');
 
 			console.warn("Local storage rules = " + storedRules);
 
-			//Preparing to migrate to chrome.storage.local
-			chrome.storage.local.set({'rules': storedRules}, function() {});
-
-			if(!storedRules){
+			if(storedRules === undefined){
 				return [];
 			}
 
 			return JSON.parse(storedRules);
 		};
-		this.set = function(rules){
-			var rulesToStore = JSON.stringify(rules);
-			localStorage['rules'] = rulesToStore;
 
-			//Preparing to migrate to chrome.storage.local
-			chrome.storage.local.set({'rules': rulesToStore}, function() {});
+		this.set = async function(rules){
+			var rulesToStore = JSON.stringify(rules);
+			await writeLocalStorage({'rules': rulesToStore});
 		};
 };
 
-var SyncedRulesService = function(){
-	this.get = function(){
-		var rules = [];
-		chrome.storage.sync.get('rules', function(item){
-			rules = item.rules;
-		});
+const readLocalStorage = async (key) => {
+    return new Promise((resolve, _) => {
+      chrome.storage.local.get([key], function (result) {
+        resolve(result[key]);
+      });
+    });
+};
 
-		return rules;
-	};
-	this.set = function(rules){
-		chrome.storage.sync.set({'rules': rules});
-	};
-}
+const writeLocalStorage = async (value) => {
+    return new Promise((resolve, _) => {
+      chrome.storage.local.set(value, function () {
+        resolve();
+      });
+    });
+};
 
 var RulesServiceFactory = {
 getRulesService: function(){

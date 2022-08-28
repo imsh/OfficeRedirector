@@ -1,7 +1,11 @@
 angular.module('officeredirector')
 .controller('RulesController', ['$scope', 'RulesService', function($scope, rulesService) {
-	$scope.rules = chrome.extension.getBackgroundPage().rules;
 	$scope.isEditing = false;
+
+	rulesService.get().then(function(rules) {
+		console.warn('In init getting rules = ' + rules);
+		$scope.rules = rules;
+	});
 
 	$scope.add = function() {
 		$scope.rules.push({
@@ -37,7 +41,8 @@ angular.module('officeredirector')
 		return text;
 	};
 
-	$scope.$watch('rules', function(newValue, oldValue){
-		rulesService.set(newValue);
+	$scope.$watch('rules', async function(newValue, oldValue){
+		console.warn('Setting rules to value = ' + newValue);
+		await rulesService.set(newValue);
 	}, true);
 }]);
