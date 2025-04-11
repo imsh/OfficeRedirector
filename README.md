@@ -1,3 +1,6 @@
+>[!WARNING]
+>The extension is Manifest v2 based, so it will not work with modern chrome. It should be possible to upgrade it to Manifest v3, but I chose to use Firefox instead.
+
 Office redirector
 ==========
 
